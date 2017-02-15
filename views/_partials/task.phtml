@@ -1,0 +1,47 @@
+<div class="col-md-12 col-sm-12 hero-feature">
+    <div class="thumbnail">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 col-thumbnail">
+                <?php if ($this->task->getImage()) : ?>
+                    <img src="/uploads/<?= $this->task->getImage() ?>" class="img-thumbnail">
+                <?php else : ?>
+                    <img src="/assets/img/nophoto.jpg" class="img-thumbnail">
+                <?php endif; ?>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="caption">
+                    <h3><?= $this->task->getTitle() ?></h3>
+                    <p>
+                        <span>Имя:</span>
+                        <a href="/tasks?username=<?= urlencode($this->task->getUsername()) ?>">
+                            <?= $this->task->getUsername() ?>
+                        </a>
+                    </p>
+                    <p>
+                        <span>Email:</span>
+                        <a href="/tasks?email=<?= urlencode($this->task->getEmail()) ?>">
+                            <?= $this->task->getEmail() ?>
+                        </a>
+                    </p>
+                    <p>
+                        <span>Статус:</span>
+                        <a href="/tasks?status=<?= urlencode($this->task->getStatus()) ?>">
+                            <?= $this->task->getStatus() ? 'Выполнено &#9989;' : 'Невыполнено &#10060' ?>
+                        </a>
+                    </p>
+                    <p class="description"><?= $this->task->getDescription() ?></p>
+                    <?php if ($this->page != 'preview') : ?>
+                        <p>
+                            <?php if ($this->page == 'index') : ?>
+                                <a href="/task/<?= $this->task->getId() ?>" class="btn btn-primary">Просмотр</a>
+                            <? endif; ?>
+                            <?php if ($this->getAuth()->isAdmin()) : ?>
+                                <a href="/task/edit/<?= $this->task->getId() ?>" class="btn btn-default">Редактировать</a>
+                            <?php endif; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

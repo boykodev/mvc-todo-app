@@ -1,0 +1,49 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.thumbnail {
+    width: 100%;
+    text-align: center;
+}
+
+.description {
+    font-style: italic;
+    font-size: 120%;
+}
+
+/* Fixed navbar */
+body {
+    padding-top: 90px;
+}
+/* General sizing */
+ul.dropdown-lr {
+    width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+    .dropdown-lr h3 {
+        color: #eee;
+    }
+    .dropdown-lr label {
+        color: #eee;
+    }
+}
+@media (min-width: 992px) {
+    .thumbnail .col-thumbnail {
+        text-align: left;
+    }
+}
